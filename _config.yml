@@ -48,7 +48,7 @@ owner:
     ad-client:
     ad-slot:
   baidu:
-    analytics:f84a1a14d3b2bb9a89f9f7f8fd47afab
+    analytics: f84a1a14d3b2bb9a89f9f7f8fd47afab
   bing-verify:
   github: mapleferry #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
