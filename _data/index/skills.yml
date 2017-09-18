@@ -1,0 +1,6 @@
+# skills section data
+
+label: 能力
+id : cs
+aspects: 积极性,Github, Java, HTML/CSS,  Python
+percentage: 80, 65, 90, 60, 30
