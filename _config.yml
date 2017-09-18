@@ -40,13 +40,15 @@ owner:
   email: zhangjusuo@gmail.com
   disqus-shortname: mapleferry
   twitter: zhangjusuo #username
-  #facebook: #username
+  facebook: #username
   google:
-    plus: mapleferry #username
+    plus: #username
     analytics: UA-106565951-1
     verify:
     ad-client:
     ad-slot:
+  baidu:
+    analytics:f84a1a14d3b2bb9a89f9f7f8fd47afab
   bing-verify:
   github: mapleferry #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
@@ -61,7 +63,7 @@ owner:
   dribbble: #username
   youtube: #username
   soundcloud: #username
-  weibo: #username
+  weibo: foolsren #username
   flickr: #username
   codepen: #username
-  telegram: JasonMX #username
+  telegram: Jason MX #username
