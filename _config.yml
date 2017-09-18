@@ -42,8 +42,8 @@ owner:
   twitter: zhangjusuo #username
   #facebook: #username
   google:
-    plus: #username
-    analytics: UA-62251910-2
+    plus: mapleferry #username
+    analytics: UA-106565951-1
     verify:
     ad-client:
     ad-slot:
@@ -64,4 +64,4 @@ owner:
   weibo: #username
   flickr: #username
   codepen: #username
-  telegram: #username
+  telegram: JasonMX #username
