@@ -4,6 +4,7 @@ title:  "Jekyll部署配置手册"
 date:   2017-09-22 15:30:25 +800
 categories: [工具]
 excerpt: "介绍Jekyll工具，Jekyll与Hexo、WordPress博客工具的区别，以及Jekyll在本地安装部署和远端部署的方式。"
+link: 'https://mapleferry.github.io'
 comments: true
 ---
 
@@ -15,7 +16,7 @@ Jekyll是一个简单的免费的Blog生成工具，一个生成静态网页的�
 
 <!--more-->
 ---
-### Jekyll、,hexo、 Wordpress之PK ###
+### Jekyll、hexo、 Wordpress之PK ###
 在网上反复查找资料，发现目前博客的搭建一般采用三种方式：WordPress、Hexo、Jekyll。
 
 有什么不同呢，简单的说Jekyll、Hexo不用付费，不用备案，Wordpress需要购买虚拟主机服务。那还各有什么优缺点？
@@ -88,14 +89,14 @@ $ jekyll serve  --watch
 这里是部署到GitHub Page，除了这个也可以部署到 Gitlab、Coding等，主要就是当做一个免费的服务器使用。
 1）github 上创建一个仓库，命名为 username.github.io，例如我的仓库就是 [mapleferry.github.io](https://mapleferry.github.io)，这是标准命名规范。
 2）本地创建好的博客用git管理，然后推送到GitHub上（远程仓库中不需要README.md文件，本地需要新建一个README.md文件用于推送到远端）
-{% highlight ruby %}
+~~~ ruby
  $ cd newBlog
  $ git init
  $ git add README.md
  $ git commit -m "update blog"
  $ git remote add origin git@github.com:mapleferry/test.git
  $ git push -u origin master
-{% endhighlight %}
+~~~
  
 在浏览器中输入 username.github.io 就可以访问该博客了。
 
