@@ -5,6 +5,7 @@ date:   2017-09-22 15:30:25 +800
 categories: [工具]
 excerpt: "介绍Jekyll工具，Jekyll与Hexo、WordPress博客工具的区别，以及Jekyll在本地安装部署和远端部署的方式。"
 share: true
+comments: true
 ---
 
 ### Jekyll是什么

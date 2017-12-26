@@ -5,6 +5,7 @@ date:   2017-11-28 16:32:25 +800
 categories: [编程]
 excerpt: "介绍JavaFX架构，以及编写第一个HelloWorld程序。"
 share: true
+comments: true
 ---
 ### 概述
 JavaFX是由甲骨文公司推出的一系列的产品和技术，该产品于2007年5月在JavaOne大会上首次对外公布。JavaFX技术主要应用于创建Rich Internet application（RIAs）。使用此库编写的应用程序可以跨多个平台一致运行。 使用JavaFX开发的应用程序可以在各种设备上运行，如台式计算机，手机，电视，平板电脑等。
