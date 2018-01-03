@@ -21,6 +21,7 @@ Nginx是一个 Web服务器，是一款免费开源软件，可用作反向代�
 ### 二、安装配置
 ***1.php的安装与配置***  
 解压下载的php包，到C盘（C:\），将文件夹重命名为php。进入文件夹将php.ini-development文件重命名为php.ini，并用Sublime Text等工具打开它。  
+
 **a)指定Php的ext路径。找到：**
 ~~~ JavaScript
 ;extension_dir = "./ext"
@@ -29,24 +30,27 @@ Nginx是一个 Web服务器，是一款免费开源软件，可用作反向代�
 ~~~ JavaScript
 extension_dir = "C:/php/ext"
 ~~~
-注意：去掉它前面的分号。  
+**`注意：去掉它前面的分号。`**  
+
 **b)支持MySQL。再找到：**
 ~~~ JavaScript
 ;extension = php_mysql.dll 
 ;extension = php_mysqli.dll
 ~~~
 去掉它前面的分号。  
+
 **c）支持Nginx。找到：**
 ~~~ JavaScript
 ;cgi.fix_pathinfo=1
 ~~~
 去掉前面的分号。这是Php的CGI的设置，这一步非常重要。  
-**d）其他配置**
-找到：;date.timezone = 先去前面的分号再改为 date.timezone = Asia/Shanghai
-找到：enable_dl = Off 改为 enable_dl = On
-找到： ;cgi.force_redirect = 1 先去前面的分号再改为 cgi.force_redirect = 0
-找到： ;fastcgi.impersonate = 1 去掉前面的分号
-找到：;cgi.rfc2616_headers = 0 先去前面的分号再改为 cgi.rfc2616_headers = 1
+
+**d）其他配置**  
+找到：`;date.timezone =` 先去前面的分号再改为 `date.timezone = Asia/Shanghai`  
+找到：`enable_dl = Off` 改为 `enable_dl = On`  
+找到： `;cgi.force_redirect = 1` 先去前面的分号再改为 `cgi.force_redirect = 0`  
+找到： `;fastcgi.impersonate = 1` 去掉前面的分号  
+找到：`;cgi.rfc2616_headers = 0` 先去前面的分号再改为 `cgi.rfc2616_headers = 1`  
 
 ***2、nginx的安装与配置。***  
 进入nginx的conf目录，打开nginx的配置文件nginx.conf，找到：
@@ -68,7 +72,7 @@ location / {
 #    include        fastcgi_params;
 #}
 ~~~
-去掉的“#”，将地址指向站点根目录。再把/scripts改为documentroot，这里的 document_root就是指前面“root”所指的站点路径。修改后的：
+去掉的“#”，将地址指向站点根目录。再把`/scripts`改为`documentroot`，这里的 `document_root`就是指前面“root”所指的站点路径。修改后的：
 ~~~ JavaScript
 location ~ \.php$ {
     root           XXXXX;# 修改（指向站点的根目录）
@@ -79,7 +83,7 @@ location ~ \.php$ {
 }
 ~~~
 https配置如下：
-~~~ JavaScript
+~~~ dos
 # HTTPS server
 server {
     listen       443 ssl;
@@ -98,7 +102,7 @@ server {
 ~~~
 
 ### 三、启动服务
-~~~ JavaScript
+~~~ dos
 cd c:\php
 php-cgi.exe -b 127.0.0.1:9000 -c C:/php/php.ini
 ~~~
@@ -116,7 +120,7 @@ start nginx
 浏览器输入 [http://localhost/phpinfo.php](http://localhost/phpinfo.php)
 
 ### 四、建立bat脚本
-首先把下载好的RunHiddenConsole.zip解压到nginx目录，创建脚本命名为“start_nginx.bat”内容为：
+首先把下载好的RunHiddenConsole.zip解压到nginx目录，创建脚本命名为`start_nginx.bat`内容为：
 ~~~ JavaScript
 @echo off
 REM Windows 下无效
@@ -131,7 +135,7 @@ RunHiddenConsole C:/php/php-cgi.exe -b 127.0.0.1:9000 -c C:/php/php.ini
 echo Starting nginx...
 RunHiddenConsole C:/nginx/nginx.exe -p C:/nginx
 ~~~
-创建stop_nginx.bat脚本关闭nginx：
+创建`stop_nginx.bat`脚本关闭nginx：
 ~~~ JavaScript
 @echo off
 echo Stopping nginx...
