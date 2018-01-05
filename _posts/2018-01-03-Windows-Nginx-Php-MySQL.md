@@ -2,7 +2,7 @@
 layout: post
 title:  "Windows/Nginx/Php/MySQL环境配置"
 date:   2018-01-03 17:20:00 +800
-categories: [技术]
+categories: [Nginx]
 excerpt: "介绍Windows环境下的Nginx/Php/MySQL配置，以及Nginx脚本启动"
 share: true
 comments: true
@@ -112,7 +112,7 @@ start nginx
 ~~~
 测试服务
 新建文件phpinfo.php，在文件中输入代码：
-~~~ JavaScript
+~~~ php
 <?php
     phpinfo();
 ?>
