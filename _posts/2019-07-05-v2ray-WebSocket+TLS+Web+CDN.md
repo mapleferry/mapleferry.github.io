@@ -116,9 +116,7 @@ bash <(curl -L -s https://install.direct/go.sh)
 (如果你已经添加域名解析，请务必把云朵点灰，即是 DNS only)。  
 * 当你的V2ray搭建好，nginx配置好后，设置 Crypto和开启中转。  
 确保 Cloudflare 的 Crypto 选项卡的 SSL 为 Full并且请确保 SSL 选项卡有显示 Universal SSL Status Active Certificate 这样的字眼，如果你的 SSL 选项卡没有显示这个，不要急，只是在申请证书，24 小时内可以搞定。  
-* 在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，`一定要点亮一定要点亮一定要点亮`。  
-
-云朵图标务必为橙色状态，即是 DNS and HTTP proxy(CDN)
+* 在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，`一定要点亮一定要点亮一定要点亮`。云朵图标务必为橙色状态，即是 DNS and HTTP proxy(CDN)
 
 ### 六、参考资料
 [https://www.vjsun.com/161.html](https://www.vjsun.com/161.html)  
