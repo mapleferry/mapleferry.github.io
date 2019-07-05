@@ -17,14 +17,14 @@ V2Ray(Project V) 相对于 Shadowsocks，V2Ray 更像全能选手，拥有更多
 ### 一、购买VPS、申请域名
 * 想要搭建 V2Ray，就必须要拥有一台VPS；
 * 申请域名。  
-`确认申请的域名可以在LNMP下申请SSL证书`
+`确认域名解析服务器可以使用LNMP申请Let'sEncrypt免费SSL证书`
 
 ### 二、安装LNMP
 ***1.安装前检测Screen、Wget是否安装***  
 如果没有安装，分别执行命令：  
 screen
 ~~~ dos
-screen -S lnmp
+yum install screen
 ~~~ 
 wget
 ~~~ dos
@@ -38,7 +38,7 @@ wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz && tar zxf lnm
 ~~~ dos
 lnmp status
 ~~~
-***4.添加LNMP站点*** 
+***4.添加虚拟站点*** 
 ~~~ dos
 lnmp vhost add
 ~~~
@@ -107,17 +107,17 @@ bash <(curl -L -s https://install.direct/go.sh)
 ### 四、V2rayN配置
 保持配置和v2ray服务端一致即可。  
 ![图片](/img/v2rayN_set.jpg)
-### 五、CND
+### 五、CDN
 当然用CloudFlare了，其实实现TLS最简单的办法也是CloudFlare。  
 注意：  
 1、确保域名已经可以在 Cloudflare 正常使用  
 2、在 Cloudflare 的 Overview 选项卡可以查看域名状态，请确保为激活状态，即是： Status: Active。  
-3、在 DNS 选项卡那边添加一个 A 记录的域名解析，假设你的域名是 mydomain.me，并且想要使用 vpn.mydomain.me 作为翻墙的域名。那么在 DNS 那里配置，Name 写 vpn，IPv4 address 写你的小鸡的 IP，务必把云朵点灰，然后选择 Add Record 来添加解析记录即可
+3、在 DNS 选项卡那边添加一个 A 记录的域名解析，假设你的域名是 mydomain.com，并且想要使用 v2ray.mydomain.com 作为翻墙的域名。那么在 DNS 那里配置，Name 写 v2ray，IPv4 address 写你的小鸡的 IP，务必把云朵点灰，然后选择 Add Record 来添加解析记录即可
 (如果你已经添加域名解析，请务必把云朵点灰，即是 DNS only)。  
-4、当你的V2ray搭建好，nginx或者caddy配置好后，设置 Crypto和开启中转。  
+4、当你的V2ray搭建好，nginx配置好后，设置 Crypto和开启中转。  
 
 确保 Cloudflare 的 Crypto 选项卡的 SSL 为 Full并且请确保 SSL 选项卡有显示 Universal SSL Status Active Certificate 这样的字眼，如果你的 SSL 选项卡没有显示这个，不要急，只是在申请证书，24 小时内可以搞定。  
-5、在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，一定要点亮一定要点亮一定要点亮。  
+5、在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，`一定要点亮一定要点亮一定要点亮`。  
 
 云朵图标务必为橙色状态，即是 DNS and HTTP proxy(CDN)
 
