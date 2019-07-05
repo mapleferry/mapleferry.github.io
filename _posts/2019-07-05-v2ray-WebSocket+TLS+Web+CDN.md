@@ -108,16 +108,15 @@ bash <(curl -L -s https://install.direct/go.sh)
 保持配置和v2ray服务端一致即可。  
 ![图片](/img/v2rayN_set.jpg)
 ### 五、CDN
-当然用CloudFlare了，其实实现TLS最简单的办法也是CloudFlare。  
+当然用CloudFlare了，实现TLS最简单的办法也是CloudFlare。  
 注意：  
-1、确保域名已经可以在 Cloudflare 正常使用  
-2、在 Cloudflare 的 Overview 选项卡可以查看域名状态，请确保为激活状态，即是： Status: Active。  
-3、在 DNS 选项卡那边添加一个 A 记录的域名解析，假设你的域名是 mydomain.com，并且想要使用 v2ray.mydomain.com 作为翻墙的域名。那么在 DNS 那里配置，Name 写 v2ray，IPv4 address 写你的小鸡的 IP，务必把云朵点灰，然后选择 Add Record 来添加解析记录即可
+* 确保域名已经可以在 Cloudflare正常使用  
+* 在 Cloudflare 的 Overview 选项卡可以查看域名状态，请确保为激活状态，即是： Status: Active。  
+* 在 DNS 选项卡那边添加一个 A 记录的域名解析，假设你的域名是 mydomain.com，并且想要使用 v2ray.mydomain.com 作为翻墙的域名。那么在 DNS 那里配置，Name 写 v2ray，IPv4 address 写你的小鸡的 IP，务必把云朵点灰，然后选择 Add Record 来添加解析记录即可
 (如果你已经添加域名解析，请务必把云朵点灰，即是 DNS only)。  
-4、当你的V2ray搭建好，nginx配置好后，设置 Crypto和开启中转。  
-
+* 当你的V2ray搭建好，nginx配置好后，设置 Crypto和开启中转。  
 确保 Cloudflare 的 Crypto 选项卡的 SSL 为 Full并且请确保 SSL 选项卡有显示 Universal SSL Status Active Certificate 这样的字眼，如果你的 SSL 选项卡没有显示这个，不要急，只是在申请证书，24 小时内可以搞定。  
-5、在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，`一定要点亮一定要点亮一定要点亮`。  
+* 在 DNS 选项卡那里，把刚才点灰的那个云朵图标，点亮它，`一定要点亮一定要点亮一定要点亮`。  
 
 云朵图标务必为橙色状态，即是 DNS and HTTP proxy(CDN)
 
