@@ -2,7 +2,7 @@
 layout: post
 title:  "v2ray配置WebSocket+TLS+Web+CDN"
 date:   2019-07-05 17:06:00 +800
-categories: [Nginx]
+categories: [v2ray] [WS] [TLS] [CF] [VPS]
 excerpt: "介绍VPS支持多站点下的V2ray，WebSocket+TLS+Web模式，并支持CDN转发"
 share: true
 comments: true
