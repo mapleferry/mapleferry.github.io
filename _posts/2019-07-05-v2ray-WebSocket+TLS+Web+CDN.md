@@ -66,9 +66,9 @@ bash <(curl -L -s https://install.direct/go.sh)
 ~~~
 此脚本会自动安装以下文件：
 * /usr/bin/v2ray/v2ray：V2Ray 程序
-* /etc/v2ray/config.json：配置文件  
+* /etc/v2ray/config.json：配置文件
 ***2.WebSocket + TLS + Nginx配置***
-修改v2ray服务端配置文件/etc/v2ray/config.json  
+修改v2ray服务端配置文件/etc/v2ray/config.json
 ~~~ JavaScript
 {
     "log": {
@@ -105,7 +105,6 @@ bash <(curl -L -s https://install.direct/go.sh)
     }
   ]
 }
-
 ~~~
 ### 四、客户端V2rayN配置
 保持配置和v2ray服务端一致即可。  
