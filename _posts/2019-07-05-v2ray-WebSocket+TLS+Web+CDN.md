@@ -59,7 +59,7 @@ location /v2ray {
 `注：首先确认端口未被使用。端口必须与V2ray的端口保持一致。`
 
 
-### 三、安装v2ray
+### 三、v2ray
 ***1.安装v2ray***
 ~~~ dos
 bash <(curl -L -s https://install.direct/go.sh)
@@ -68,7 +68,8 @@ bash <(curl -L -s https://install.direct/go.sh)
 * /usr/bin/v2ray/v2ray：V2Ray 程序
 * /etc/v2ray/config.json：配置文件  
 
-可以使用`systemctl v2ray start|stop|status|reload|restart|force-reload`控制V2Ray的运行。
+可以使用`systemctl start|stop|status|reload|restart|force-reload v2ray`控制V2Ray的运行。  
+如果使用Linux并开启了systemd，可以使用`journalctl -u v2ray`查看V2Ray退出时的日志。  
   
 ***2.WebSocket + TLS + Nginx配置***  
 修改v2ray服务端配置文件/etc/v2ray/config.json
@@ -109,8 +110,16 @@ bash <(curl -L -s https://install.direct/go.sh)
   ]
 }
 ~~~
+
+***3.V2ray升级***   
+需要更新升级v2ray时，重新执行命令即可。
+~~~ dos
+bash <(curl -L -s https://install.direct/go.sh)
+~~~
+
 ### 四、客户端V2rayN配置
-保持配置和v2ray服务端一致即可。  
+下载V2rayN。[https://github.com/2dust/v2rayN/releases](https://github.com/2dust/v2rayN/releases)  
+配置信息保持和v2ray服务端一致即可。  
 ![图片](/img/v2rayN_set.jpg)
 ### 五、CDN
 当然用CloudFlare了，实现TLS最简单的办法也是CloudFlare。  
