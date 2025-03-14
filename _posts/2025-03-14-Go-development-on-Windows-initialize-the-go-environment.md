@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "windows上go开发，初始化go环境"
-date:   2025-03-14 16:40:00 +000
+date:   2025-03-14 16:40:00 +800
 categories: [产品]
 excerpt: ""
 share: true

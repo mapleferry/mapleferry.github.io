@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Go 语言：现代开发的简单力量"
-date:   2025-03-14 16:40:00 +000
+date:   2025-03-14 16:40:00 +800
 categories: [产品]
 excerpt: ""
 share: true
