@@ -1,0 +1,160 @@
+baseURL: 'https://mapleferry.github.io/'
+title: '枫林晓筑'
+theme: 'PaperMod'
+pagination:
+  pagerSize: '10'  # 首页每页显示的文章数
+languageCode: 'zh-cn'
+defaultContentLanguage: zh
+minify:
+  disableXML: true
+  minifyOutput: true
+  minify:
+    disableHTML: false
+    disableCSS: false
+    disableJS: false
+    disableJSON: false
+    disableSVG: false
+    disableXML: false
+
+# Markdown渲染设置
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # 允许原始HTML内容
+
+# 是否构建草稿
+buildDrafts: false
+# 是否构建未来的文章
+buildFuture: false
+# 是否构建过期的文章
+buildExpired: false
+# 是否启用 Emoji
+enableEmoji: true
+# 是否启用 Git 信息
+enableGitInfo: false
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
+
+params:
+  DateFormat: "2006-01-02"
+  maxWidth: "90%"
+  assets:
+    favicon: "img/mp_logo.jpg"
+    favicon16x16: "img/mp_logo.jpg"
+    favicon32x32: "img/mp_logo.jpg"
+    apple_touch_icon: "img/mp_logo.jpg"
+    safari_pinned_tab: "img/mp_logo.jpg"
+  env: production
+  author: Jones
+  comments: true
+  commentsProvider: "giscus"
+  giscus:
+    repo: "mapleferry/mapleferry.github.io"
+    repoId: "103908796"
+    category: "Comments"
+    categoryId: "8143643"
+    mapping: "pathname"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "light"
+    lang: "zh-CN"
+    loading: "lazy"
+    strict: "0"
+    lazyLoad: true
+    crossOrigin: "anonymous"
+    
+  homeInfoParams:
+    title: "欢迎"
+    content: "大鹏一日同风起，扶摇直上九万里"
+
+  # 页面显示设置
+  showBreadCrumbs: true
+  showCodeCopyButtons: true
+  showLastUpdated: true
+  showShareButtons: true
+  showShareButtonsCount: 5
+  showToc: false
+  showTocButton: false
+
+  showTableOfContents: true
+  showWordCount: true
+  showReadingTime: true
+  showPageDetails: true
+  showRecentPosts: true
+  showRecentPostsCount: 5
+  showPostNavLinks: true
+  showPostReadingTime: true
+  showRssButtonInSectionTermList: true
+  useHugoToc: true
+  disableSpecial1stPost: false
+
+  # 搜索设置
+  showSearch: true
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10
+    keys:
+      - title
+      - content
+    maxResults: 10
+
+  # SEO 设置
+  description: "枫林晓筑 - 个人博客"
+  keywords: ["blog", "hugo", "papermod"]
+  images: ["img/site-feature-image.jpg"]
+  defaultTheme: auto
+  showLastMod: true
+
+  # 社交链接
+  socialIcons:
+    - name: GitHub
+      url: "https://github.com/mapleferry"
+
+menu:
+  main:
+    - identifier: about
+      name: 🙋🏻‍♂️关于
+      url: /about
+      weight: 1
+    - identifier: home
+      name: 🏠主页
+      url: /
+      weight: 2
+    - identifier: posts
+      name: 📚文章
+      url: /posts
+      weight: 3
+    - identifier: archives
+      name: ⏱时间轴
+      url: /archives
+      weight: 20
+    - identifier: categories
+      name: 🧩分类
+      url: categories
+      weight: 30
+    - identifier: tags
+      name: 🔖标签
+      url: /tags
+      weight: 40
+    - identifier: search
+      name: 🔍搜索
+      url: search
+      weight: 50
+    # - identifier: links
+    #   name: 🤝友链
+    #   url: links
+    #   weight: 60
+
+security:
+  enableInlineShortcodes: false
+  _merge: deep
