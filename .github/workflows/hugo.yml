@@ -67,11 +67,12 @@ jobs:
         run: |
           echo ">>> 查看Hugo版本信息："
           hugo version
-          echo ">>> 开始Hugo构建，使用详细输出..."
+          echo ">>> 打印Hugo配置信息："
+          hugo config | grep -i "theme\|baseurl\|publishdir"
+          echo ">>> 开始Hugo构建..."
           hugo \
             --gc \
             --minify \
-            --verbose \
             --baseURL="${{ steps.pages.outputs.base_url }}"
           echo "<<< Hugo构建完成"
 
