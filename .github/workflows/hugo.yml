@@ -40,9 +40,9 @@ jobs:
           mkdir -p themes
           echo ">>> 检查themes目录："
           ls -la themes/
-          echo ">>> 强制重新克隆主题..."
+          echo ">>> 强制重新克隆主题，使用最新版本..."
           rm -rf themes/PaperMod
-          git clone -b v6.0 --depth=1 https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+          git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
           echo ">>> 检查克隆的主题目录结构："
           ls -la themes/PaperMod/
           find themes/PaperMod/ -maxdepth 2 -type d | sort
@@ -73,6 +73,8 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --logLevel info \
+            --printPathWarnings \
             --baseURL="${{ steps.pages.outputs.base_url }}"
           echo "<<< Hugo构建完成"
 
