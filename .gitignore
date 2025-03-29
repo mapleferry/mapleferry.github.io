@@ -1,0 +1,21 @@
+# Hugo default output directory
+/public/
+
+# Hugo resources directory
+/resources/
+
+# Hugo lock file
+.hugo_build.lock
+
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# OS specific files
+.DS_Store
+Thumbs.db 

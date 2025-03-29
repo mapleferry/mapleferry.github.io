@@ -1,0 +1,78 @@
+/* 声明字体 */
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/NotoSansSC-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/NotoSansSC-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* 确保优先级足够高 */
+:root {
+    --main-width: min(80%, 1200px); 
+    --nav-width: min(80%, 1200px); 
+    --post-width: min(60%, 1200px); 
+    --font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+}
+
+/* 设置标题字体 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* 设置正文字体 */
+body {
+    font-family: 'Noto Sans SC', 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* 设置代码字体 */
+code, pre {
+    font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", monospace;
+}
+
+/* 减少菜单和homeInfoParams之间的空白 */
+.nav {
+    margin-bottom: 0px;
+}
+
+/* 减少欢迎部分的上下边距 */
+.first-entry.home-info {
+    min-height: auto;
+    margin: 10px 0 10px 0;
+}
+
+/* 减少社交图标与文章列表之间的空白 */
+.first-entry .entry-footer {
+    margin-bottom: 0;
+}
+
+/* 调整文章列表的上边距 */
+.post-entry:first-of-type {
+    margin-top: 10px;
+}
