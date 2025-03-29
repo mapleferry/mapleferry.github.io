@@ -36,7 +36,8 @@ jobs:
         run: |
           if [ ! -d "themes/PaperMod" ]; then
             echo "Theme directory not found, cloning theme..."
-            git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+            mkdir -p themes
+            git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
           else
             echo "Theme directory exists"
             ls -la themes/PaperMod
@@ -44,20 +45,40 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Pre-build check
+        run: |
+          echo "Current directory structure before build:"
+          find . -maxdepth 3 -type d | sort
+          echo "Theme config:"
+          ls -la themes/PaperMod/
+          echo "Content directory:"
+          ls -la content/
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
         run: |
+          echo "Hugo version:"
+          hugo version
+          echo "Running Hugo build with verbose output:"
           hugo \
             --gc \
             --minify \
+            --verbose \
             --baseURL "${{ steps.pages.outputs.base_url }}"
       - name: Debug output
         run: |
           echo "Checking site structure:"
           ls -la public/
-          echo "Checking if index exists:"
-          cat public/index.html || echo "No index.html found"
+          echo "Checking CSS directory:"
+          ls -la public/css/ || echo "No CSS directory found"
+          echo "Checking index HTML:"
+          head -n 20 public/index.html || echo "No index.html found"
+          echo "Checking config:"
+          cat config.yaml
+          echo "Checking theme structure:"
+          ls -la themes/PaperMod/layouts/
+          echo "Current directory structure:"
+          find . -maxdepth 2 -type d | sort
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
