@@ -1,0 +1,24 @@
+{{- /* Comments area start */ -}}
+{{- /* 检查是否启用了评论 */ -}}
+{{- if .Site.Params.comments -}}
+    {{- /* 检查评论提供商是否为giscus */ -}}
+    {{- if eq .Site.Params.commentsProvider "giscus" -}}
+        {{- /* giscus评论系统 */ -}}
+        <script src="https://giscus.app/client.js"
+            data-repo="{{ .Site.Params.giscus.repo }}"
+            data-repo-id="{{ .Site.Params.giscus.repoId }}"
+            data-category="{{ .Site.Params.giscus.category }}"
+            data-category-id="{{ .Site.Params.giscus.categoryId }}"
+            data-mapping="{{ default `pathname` .Site.Params.giscus.mapping }}"
+            data-strict="{{ default 0 .Site.Params.giscus.strict }}"
+            data-reactions-enabled="{{ default 1 .Site.Params.giscus.reactionsEnabled }}"
+            data-emit-metadata="{{ default 0 .Site.Params.giscus.emitMetadata }}"
+            data-input-position="{{ default `bottom` .Site.Params.giscus.inputPosition }}"
+            data-theme="{{ default `light` .Site.Params.giscus.theme }}"
+            data-lang="{{ default `zh-CN` .Site.Params.giscus.lang }}"
+            crossorigin="{{ default `anonymous` .Site.Params.giscus.crossOrigin }}"
+            async>
+        </script>
+    {{- end -}}
+{{- end -}}
+{{- /* Comments area end */ -}} 
