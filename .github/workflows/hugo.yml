@@ -26,59 +26,72 @@ jobs:
     steps:
       - name: Install Hugo CLI
         run: |
+          echo ">>> 开始安装Hugo CLI..."
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          echo "<<< Hugo CLI安装完成"
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup theme
         run: |
+          echo ">>> 开始设置主题..."
           if [ ! -d "themes/PaperMod" ]; then
-            echo "Theme directory not found, cloning theme..."
+            echo ">>> 主题目录不存在，开始克隆主题..."
             mkdir -p themes
             git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+            echo "<<< 主题克隆完成"
           else
-            echo "Theme directory exists"
+            echo ">>> 主题目录已存在，显示内容："
             ls -la themes/PaperMod
           fi
+          echo "<<< 主题设置完成"
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Pre-build check
         run: |
-          echo "Current directory structure before build:"
+          echo ">>> 开始构建前检查..."
+          echo ">>> 当前目录结构："
           find . -maxdepth 3 -type d | sort
-          echo "Theme config:"
+          echo ">>> 主题配置："
           ls -la themes/PaperMod/
-          echo "Content directory:"
+          echo ">>> 内容目录："
           ls -la content/
+          echo "<<< 构建前检查完成"
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
         run: |
-          echo "Hugo version:"
+          echo ">>> 查看Hugo版本信息："
           hugo version
-          echo "Running Hugo build with verbose output:"
+          echo ">>> 开始Hugo构建，使用详细输出..."
           hugo \
             --gc \
             --minify \
             --verbose \
-            --baseURL："${{ steps.pages.outputs.base_url }}"
+            --baseURL="${{ steps.pages.outputs.base_url }}"
+          echo "<<< Hugo构建完成"
+
       - name: Debug output
         run: |
-          echo "Checking site structure:"
+          echo ">>> 开始调试输出..."
+          echo ">>> 检查站点结构："
           ls -la public/
-          echo "Checking CSS directory:"
+          echo ">>> 检查CSS目录："
           ls -la public/css/ || echo "No CSS directory found"
-          echo "Checking index HTML:"
+          echo ">>> 检查index HTML："
           head -n 20 public/index.html || echo "No index.html found"
-          echo "Checking config:"
+          echo ">>> 检查配置文件："
           cat config.yaml
-          echo "Checking theme structure:"
+          echo ">>> 检查主题结构："
           ls -la themes/PaperMod/layouts/
-          echo "Current directory structure:"
+          echo ">>> 当前目录结构："
           find . -maxdepth 2 -type d | sort
+          echo "<<< 调试输出完成"
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
