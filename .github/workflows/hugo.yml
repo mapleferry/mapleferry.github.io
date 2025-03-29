@@ -37,15 +37,15 @@ jobs:
       - name: Setup theme
         run: |
           echo ">>> 开始设置主题..."
-          if [ ! -d "themes/PaperMod" ]; then
-            echo ">>> 主题目录不存在，开始克隆主题..."
-            mkdir -p themes
-            git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-            echo "<<< 主题克隆完成"
-          else
-            echo ">>> 主题目录已存在，显示内容："
-            ls -la themes/PaperMod
-          fi
+          mkdir -p themes
+          echo ">>> 检查themes目录："
+          ls -la themes/
+          echo ">>> 强制重新克隆主题..."
+          rm -rf themes/PaperMod
+          git clone -b v6.0 --depth=1 https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+          echo ">>> 检查克隆的主题目录结构："
+          ls -la themes/PaperMod/
+          find themes/PaperMod/ -maxdepth 2 -type d | sort
           echo "<<< 主题设置完成"
       - name: Setup Pages
         id: pages
@@ -84,13 +84,17 @@ jobs:
           echo ">>> 检查CSS目录："
           ls -la public/css/ || echo "No CSS directory found"
           echo ">>> 检查index HTML："
-          head -n 20 public/index.html || echo "No index.html found"
+          head -n 30 public/index.html || echo "No index.html found"
+          echo ">>> 检查资源文件："
+          find public/ -name "*.css" -o -name "*.js" | sort
           echo ">>> 检查配置文件："
           cat config.yaml
-          echo ">>> 检查主题结构："
-          ls -la themes/PaperMod/layouts/
-          echo ">>> 当前目录结构："
-          find . -maxdepth 2 -type d | sort
+          echo ">>> 检查主题内容："
+          ls -la themes/ || echo "No themes directory"
+          echo ">>> PaperMod主题内容："
+          ls -la themes/PaperMod/ || echo "No PaperMod theme directory"
+          echo ">>> PaperMod布局文件："
+          find themes/PaperMod/ -name "*.html" | head -n 10 || echo "No html files in theme"
           echo "<<< 调试输出完成"
           
       - name: Upload artifact
