@@ -64,7 +64,7 @@ jobs:
             --gc \
             --minify \
             --verbose \
-            --baseURL "${{ steps.pages.outputs.base_url }}"
+            --baseURL："${{ steps.pages.outputs.base_url }}"
       - name: Debug output
         run: |
           echo "Checking site structure:"
