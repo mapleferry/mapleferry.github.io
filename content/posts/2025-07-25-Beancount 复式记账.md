@@ -2,7 +2,7 @@
 title: "Beancount 复式记账"
 date:  2025-07-25T11:28:00+08:00
 categories: ['财务']
-series: [Beancount']
+series: ['Beancount']
 ShowToc: true
 #TocOpen: true
 tags: ['Beancount', '复式记账','财务']

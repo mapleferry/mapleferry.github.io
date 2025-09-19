@@ -2,7 +2,7 @@
 title: "Beancount高级进阶：玩转你的财务数据！"
 date:  2025-08-05T13:43:00+08:00
 categories: ['财务']
-series: [Beancount']
+series: ['Beancount']
 ShowToc: true
 #TocOpen: true
 tags: ['Beancount','复式记账','财务','高级','进阶']

@@ -2,7 +2,7 @@
 title: "Claude & Codex 的CLI实战指南"
 date:  2025-09-19T11:45:00+08:00
 categories: ['AI']
-series: [Beancount']
+series: ['AI']
 ShowToc: true
 #TocOpen: true
 tags: ['AI','CLI','Claude','Codex','实战']
