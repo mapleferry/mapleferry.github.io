@@ -3,7 +3,7 @@ title: '枫林晓筑'
 theme: 'PaperMod'
 pagination:
   pagerSize: '10'  # 首页每页显示的文章数
-languageCode: 'zh-cn'
+locale: 'zh-cn'
 defaultContentLanguage: zh
 minify:
   disableXML: true

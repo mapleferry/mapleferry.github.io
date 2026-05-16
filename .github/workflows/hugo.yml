@@ -63,24 +63,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          submodules: recursive
       - name: Setup theme
         run: |
           echo ">>> 开始设置主题..."
-          mkdir -p themes
-          echo ">>> 检查themes目录："
-          ls -la themes/
-          echo ">>> 强制更新最新版PaperMod主题..."
-          if [ -d "themes/PaperMod/.git" ]; then
-            echo ">>> 主题目录已存在，正在更新..."
-            cd themes/PaperMod
-            git fetch --all
-            git reset --hard origin/master
-            cd ../..
-          else
-            echo ">>> 主题目录不存在，开始克隆..."
-            rm -rf themes/PaperMod
-            git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-          fi
+          git submodule update --init --recursive --depth=1
           echo ">>> 显示主题版本信息："
           cd themes/PaperMod && git log -1 --pretty=format:"%h - %an, %ar : %s" && cd ../..
           echo ">>> 检查克隆的主题目录结构："
