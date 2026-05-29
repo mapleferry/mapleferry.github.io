@@ -6,6 +6,7 @@ series: ['Ranking AI']
 ShowToc: true
 #TocOpen: true
 tags: ['AI', 'Ranking','Tools']
+description: "2025年4月3日 AI 开源项目跨分类排名，涵盖 LLM、ChatGPT、OpenAI 等 Top 10 榜单。"
 
 ---
 
@@ -14,6 +15,8 @@ tags: ['AI', 'Ranking','Tools']
 ## LLM
 
 This is top 10, for more click **[Top 100 Stars in LLM](https://github.com/mapleferry/Github-Ranking-AI/blob/main/Top100/LLM.md)**
+
+<!--more-->
 
 |Ranking|Project Name|Stars|Forks|Language|Open Issues|Description|Last Commit|
 | ---------| --------------| --------| -------| ------------| -------------| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------|
